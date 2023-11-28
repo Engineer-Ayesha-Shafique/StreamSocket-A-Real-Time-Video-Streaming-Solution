@@ -83,7 +83,7 @@ Our desktop-based dynamic memory allocation application has the following featur
 ## <a name="_toc122606902"></a>**Dynamic Memory Allocation**
 The task of fulfilling an allocation request consists of locating a block of unused memory of sufficient size. Memory requests are satisfied by allocating portions from a large pool of memory called the heap or free store. At any given time, some parts of the heap are in use, while some are "free" (unused) and thus available for future allocations. Several issues complicate the implementation, such as external fragmentation, which arises when there are many small gaps between allocated memory blocks, which invalidate their use for an allocation request. The allocator's metadata can also inflate the size of (individually) small allocations. This is often managed by chunking. The memory management system must track outstanding allocations to ensure that they do not overlap and that no memory is ever "lost" as a memory leak. The lowest average instruction path length required to allocate a single memory slot was 52 (as measured with an instruction level profiler on a variety of software) [4]
 
-![](../images/2.png)
+![](images/2.png)
 
 
 
@@ -92,7 +92,7 @@ The **Heap** is that portion of computer memory, allocated to a running applic
 
 Blocks of memory allocated on the heap are actually a special type of data structure consisting of a pointer to the end of the previous block, a pointer to the end of this block, the allocated block of memory which can vary in size depending on its use, a pointer to the beginning of this block, and a pointer to the next block.
 
-![](../images/3.png)
+![](images/3.png)
 ## <a name="_toc122606904"></a>**Stack Memory**
 Stack memory is a region of memory that is allocated to a process in contiguous blocks within RAM. It also serves as a LIFO (last-in-first-out) data or instruction buffer. So, if a variable is the last element on the stack, it will be the first to be removed when memory is deallocated. Local variables, functions, and pointer variables are examples of data stored in the stack.
 ## <a name="_toc122606905"></a>**Fragmentation**
@@ -106,17 +106,17 @@ The segmentation method is very similar to paging. The only distinction between 
 
 A program segment includes the main function of the program, data structures, utility functions, and so on. For each process, the operating system keeps a segment map table. It also contains a list of free memory blocks, as well as their size, segment numbers, and memory locations in main memory or virtual memory.
 ## <a name="_toc122606907"></a>**Flowchart**
-![](../images/4.png)
+![](images/4.png)
 ## <a name="_toc122606908"></a>**Graphical User Interface (GUI)**
-![](../images/5.png)This is a GUI based Dynamic Memory Allocator. We run the program and set the memory size as we desire. 
+![](images/5.png)This is a GUI based Dynamic Memory Allocator. We run the program and set the memory size as we desire. 
 
-![](../images/6.png)![](../images/7.png)After we have entered the desired memory size, add as many holes as you like.
+![](images/6.png)![](images/7.png)After we have entered the desired memory size, add as many holes as you like.
 
 Here we have added 3 holes.
 
-![](../images/8.png)Now you may choose to add as many processes as you like. The size of each process is up to you. We will keep adding processes one by one, until we can’t add any more.
+![](images/8.png)Now you may choose to add as many processes as you like. The size of each process is up to you. We will keep adding processes one by one, until we can’t add any more.
 
-![](../images/9.png)We have added four processes and when we tried to add another process, it gives an error message saying that there is no fit.We have to deallocate some memory for the new process to fit. We may choose to compact the memory, and see if we find any space for our new process. Otherwise, simply click on any process you want to deallocate.
+![](images/9.png)We have added four processes and when we tried to add another process, it gives an error message saying that there is no fit.We have to deallocate some memory for the new process to fit. We may choose to compact the memory, and see if we find any space for our new process. Otherwise, simply click on any process you want to deallocate.
 
 Another amazing feature we have implemented here is that we may choose which function to use to allocate memory. 
 
@@ -128,8 +128,8 @@ Best fit searches the entire list and uses the smallest hole that is large enoug
 1. ## <a name="_toc122606911"></a>**Worst-Fit Memory Allocation**
 As the best fit leaves many small, useless holes it might be a good idea to always use the largest hole available. The idea is that splitting a large hole into two will leave a large enough hole to be useful. It has been shown that this algorithm is not very good either.
 
-![](../images/10.png)We have added all the process using Best Fit. Let us deallocate some memory and add a new process using worst fit.
-# ![](../images/11.png)
+![](images/10.png)We have added all the process using Best Fit. Let us deallocate some memory and add a new process using worst fit.
+# ![](images/11.png)
 #
 ## <a name="_toc122606912"></a><a name="_toc122606913"></a>**Languages and Framework** 
 We’re going to implement our project in .NET Framework 4.6 using C#. All implementation is done using Visual Studio 2022. [6] 
